@@ -37,7 +37,7 @@ jobs:
         run: pnpm install
 
       - name: Run tests
-        run: pnpm ci:test
+        run: pnpm test
 
       - name: Run lint
         run: pnpm lint
