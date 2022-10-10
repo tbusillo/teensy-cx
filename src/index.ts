@@ -1,22 +1,28 @@
-import * as dotenv from 'dotenv'
+type AllowedArgs = string | false | { [key: string]: boolean | number | string }
 
-dotenv.config()
-// .env usage:
-
-const { NODE_ENV } = process.env
-
-console.log('Environment is currently: ', { NODE_ENV })
-
-/**
- * @description This is a sample function that returns the sum of two numbers
- *
- * @returns {number} The sum of the variables `one` and `two`.
- */
-export function add(): number {
-  const one = 1
-  const two = 2
-
-  return one + two
+interface CxResult {
+  resultingClasses: string[]
 }
 
-console.log('Did this work?')
+const cx = (...classes: AllowedArgs[]) => {
+  const resultingClasses: CxResult[] = []
+
+  if (Array.isArray(classes)) {
+    classes.forEach(element => {
+      if (typeof element === 'string') {
+        resultingClasses.push(element as any)
+      } else if (typeof element === 'object') {
+        for (const key in element) {
+          if (element[key]) {
+            resultingClasses.push(key as any)
+          }
+        }
+      }
+      return
+    })
+  }
+
+  return [...resultingClasses].filter(Boolean).join(' ')
+}
+
+export default cx
