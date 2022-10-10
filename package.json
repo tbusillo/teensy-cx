@@ -1,7 +1,7 @@
 {
   "name": "@tbusillo/teensy-cx",
   "author": "Tom Busillo",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "packageManager": "pnpm@7.13.2",
   "description": "A teensy-tiny Node.js TypeScript package template.",
   "type": "module",
@@ -32,6 +32,9 @@
   "files": [
     "dist"
   ],
+  "publishConfig": {
+    "@tbusillo:registry": "https://npm.pkg.github.com"
+  },
   "scripts": {
     "dev": "unbuild",
     "start": "nodemon --exec ts-node src/index.ts",
@@ -40,8 +43,8 @@
     "stub": "pnpm unbuild --stub",
     "test": "jest",
     "lint": "eslint --ext .ts --fix",
-    "pre:ci:test": "pnpm install -r --store=node_modules/.pnpm-store",
-    "ci:test": "pnpm build && pnpm test",
+    "preci": "pnpm install -r --store=node_modules/.pnpm-store",
+    "ci": "pnpm build && pnpm test",
     "clean": "rm -rf dist",
     "release": "standard-version",
     "format": "prettier --write '**/*.{ts,js,json,md}'",
