@@ -13,11 +13,29 @@
 
 ## Features
 
+- 1kb gzip
+
 ## Installation
 
 ```bash
 pnpm add @tbusillo/teensy-cx
 ```
+
+## Usage
+
+```js
+import cx from '@tbusillo/teensy-cx'
+
+type CompProps = {
+  children: React.ReactNode;
+}
+
+const Component = ({ children }): CompProps => {
+  return(<div className={cx('first-class', hasProp ? 'conditional-class' : 'falsy class', { 'aria-invalid': ariaInvalid })}>)
+}
+```
+
+Assuming `hasProp` and `ariaInvalid` evaluate to `truthy` values, the result would be `first-class conditional-class aria-invalid`.
 
 ## License
 
