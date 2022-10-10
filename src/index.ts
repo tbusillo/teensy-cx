@@ -1,28 +1,32 @@
-type AllowedArgs = string | false | { [key: string]: boolean | number | string }
+export type AllowedArgs = string | { [key: string]: boolean | number | string }
 
-interface CxResult {
-  resultingClasses: string[]
+export interface CxResult {
+  res: string[]
 }
 
-const cx = (...classes: AllowedArgs[]) => {
-  const resultingClasses: CxResult[] = []
+const invalidPrototypes = new Set([null, undefined, NaN, Infinity])
 
-  if (Array.isArray(classes)) {
-    classes.forEach(element => {
+const cx = (...classes: AllowedArgs[]): string | void => {
+  if (!Array.isArray) return
+
+  const r: CxResult['res'] = []
+
+  classes
+    .filter(e => !invalidPrototypes.has(typeof e as any))
+    .map(element => {
       if (typeof element === 'string') {
-        resultingClasses.push(element as any)
+        r.push(element)
       } else if (typeof element === 'object') {
         for (const key in element) {
           if (element[key]) {
-            resultingClasses.push(key as any)
+            r.push(key)
           }
         }
       }
       return
     })
-  }
 
-  return [...resultingClasses].filter(Boolean).join(' ')
+  return [...r].filter(Boolean).join(' ')
 }
 
 export default cx
