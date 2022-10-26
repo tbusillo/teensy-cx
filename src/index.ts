@@ -4,12 +4,24 @@ export interface CxResult {
   res: string[]
 }
 
-const invalidPrototypes = new Set([null, undefined, NaN, Infinity])
+const invalidPrototypes = new Set([
+  null,
+  undefined,
+  NaN,
+  Infinity,
+  -0,
+  0,
+  0n,
+  false,
+  '',
+  '',
+  ``
+])
 
-const cx = (...classes: AllowedArgs[]): string | void => {
-  if (!Array.isArray) return
-
+const cx = (...classes: AllowedArgs[]): string => {
   const r: CxResult['res'] = []
+
+  if (!Array.isArray) return ''
 
   classes
     .filter(e => !invalidPrototypes.has(typeof e as any))
