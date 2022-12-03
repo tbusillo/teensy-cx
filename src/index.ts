@@ -38,7 +38,7 @@ const cx = (...classes: AllowedArgs[]): string => {
       return
     })
 
-  return [...r].filter(Boolean).join(' ')
+  return [...r].filter(Boolean).join(' ') || ''
 }
 
 export default cx
