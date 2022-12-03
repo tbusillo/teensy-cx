@@ -1,8 +1,6 @@
 export type AllowedArgs = string | { [key: string]: boolean | number | string }
 
-export interface CxResult {
-  res: string[]
-}
+export type CxResult = string[]
 
 const invalidPrototypes = new Set([
   null,
@@ -19,7 +17,7 @@ const invalidPrototypes = new Set([
 ])
 
 const cx = (...classes: AllowedArgs[]): string => {
-  const r: CxResult['res'] = []
+  const r: CxResult = []
 
   if (!Array.isArray) return ''
 
