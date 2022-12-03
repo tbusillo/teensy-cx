@@ -19,7 +19,9 @@ const invalidPrototypes = new Set([
 const cx = (...classes: AllowedArgs[]): string => {
   const r: CxResult = []
 
-  if (!Array.isArray) return ''
+  if (!Array.isArray(cx)) {
+    return ' '
+  }
 
   classes
     .filter(e => !invalidPrototypes.has(typeof e as any))
