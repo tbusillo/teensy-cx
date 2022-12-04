@@ -9,18 +9,18 @@ const invalidPrototypes = new Set([
   Infinity,
   -0,
   0,
-  0n,
   false,
   '',
   '',
   ``
 ])
 
-const cx = (...classes: AllowedArgs[]): string => {
+const cx = (...classes: AllowedArgs[]): string | undefined => {
   const r: CxResult = []
+  const emptyString = ''
 
-  if (!Array.isArray(cx)) {
-    return ' '
+  if (!Array.isArray(classes)) {
+    return emptyString
   }
 
   classes
@@ -37,8 +37,10 @@ const cx = (...classes: AllowedArgs[]): string => {
       }
       return
     })
-
-  return [...r].filter(Boolean).join(' ') || ''
+  if (!r || r.length === 0) {
+    return emptyString
+  }
+  return [...r].filter(Boolean).join(' ') || emptyString
 }
 
 export default cx

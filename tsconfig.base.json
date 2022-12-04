@@ -12,10 +12,13 @@
     "sourceMap": true,
     "moduleResolution": "node",
     "declaration": true,
-    "declarationDir": "dist"
+    "declarationDir": "dist",
+    "removeComments": true,
+    "allowSyntheticDefaultImports": true
   },
   "include": ["src/*.ts"],
   "ts-node": {
-    "esm": true
+    "esm": true,
+    "experimentalSpecifierResolution": "node"
   }
 }
