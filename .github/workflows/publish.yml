@@ -23,7 +23,17 @@ jobs:
         with:
           node-version: 18
           registry-url: https://registry.npmjs.org/
-      - run: npm ci
+      - run: npm test
+      - run: |
+          npm config set "//registry.npmjs.org/:_authToken" "${{secrets.NPM_AUTH_TOKEN}}"
+          npm config set "@teensy:registry" "https://registry.npmjs.org/"
+          node -e "
+            const pkg = require('./package.json');
+            pkg.version = pkg.version + '-next.' + process.env.REV;
+            require('fs').writeFileSync('./package.json', JSON.stringify(pkg, null, 2));
+          "
+        env:
+          REV: $(git rev-parse --short=8 HEAD)
       - run: npm publish --tag=next
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
