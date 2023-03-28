@@ -38,7 +38,7 @@ jobs:
       - name: Publish to NPM
         shell: bash
         run: |
-          echo "REV=$(git rev-parse --short=8 HEAD)"
+          echo "REV=$(git rev-parse --short=8 HEAD)" >> $GITHUB_ENV
           npm config set "//registry.npmjs.org/:_authToken" "${{secrets.NPM_AUTH_TOKEN}}"
           npm config set "@teensy:registry" "https://registry.npmjs.org/"
           node -e "
@@ -46,6 +46,6 @@ jobs:
             pkg.version = pkg.version + '-next.' + process.env.REV;
             require('fs').writeFileSync('./package.json', JSON.stringify(pkg, null, 2));
           "
-      - run: npm publish --tag=next
+      - run: npm publish --access=public --tag=next
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
