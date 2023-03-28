@@ -1,5 +1,5 @@
 {
-  "name": "@tbusillo/teensy-cx",
+  "name": "@teensy/cx",
   "author": "Tom Busillo",
   "version": "0.0.5",
   "packageManager": "pnpm@7.13.2",
@@ -33,7 +33,7 @@
     "dist"
   ],
   "publishConfig": {
-    "@tbusillo:registry": "https://npm.pkg.github.com"
+    "@teensy:registry": "https://registry.npmjs.org/"
   },
   "scripts": {
     "dev": "unbuild",

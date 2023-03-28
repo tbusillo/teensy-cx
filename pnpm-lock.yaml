@@ -2,7 +2,6 @@ lockfileVersion: 5.4
 
 specifiers:
   '@jest/globals': ^29.0.2
-  '@tbusillo/teensy-cx': 'link:'
   '@types/jest': ^29.0.0
   '@types/node': ^18.7.15
   '@typescript-eslint/eslint-plugin': ^5.39.0
@@ -21,9 +20,6 @@ specifiers:
   ts-node: ^10.9.1
   typescript: ^4.8.2
   unbuild: 1.0.1
-
-dependencies:
-  '@tbusillo/teensy-cx': 'link:'
 
 devDependencies:
   '@jest/globals': 29.0.2

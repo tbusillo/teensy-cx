@@ -38,4 +38,22 @@ describe('cx', () => {
 
     expect(classNames).toEqual('a c d')
   })
+
+  it('should return an empty string if an empty array is provided', () => {
+    const classNames = cx()
+
+    expect(classNames).toEqual('')
+  })
+
+  it('should return an empty string if an empty object is provided', () => {
+    const classNames = cx({})
+
+    expect(classNames).toEqual('')
+  })
+
+  it('should handle nested arrays', () => {
+    const classNames = cx(['a', 'b'], ['c', 'd'])
+
+    expect(classNames).toEqual('a b c d')
+  })
 })
