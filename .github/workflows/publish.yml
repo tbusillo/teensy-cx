@@ -38,12 +38,12 @@ jobs:
       - name: Publish to NPM
         shell: bash
         run: |
-          echo "REV=$(git rev-parse --short=8 HEAD)" >> $GITHUB_ENV
+          echo "$(git rev-parse --short=8 HEAD)" >> $GITHUB_REV
           npm config set "//registry.npmjs.org/:_authToken" "${{secrets.NPM_AUTH_TOKEN}}"
           npm config set "@teensy:registry" "https://registry.npmjs.org/"
           node -e "
             const pkg = require('./package.json');
-            pkg.version = pkg.version + '-next.' + process.env.REV;
+            pkg.version = pkg.version + '-next.' + '$GITHUB_REV';
             require('fs').writeFileSync('./package.json', JSON.stringify(pkg, null, 2));
           "
       - run: npm publish --access=public --tag=next
