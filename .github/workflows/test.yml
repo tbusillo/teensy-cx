@@ -17,10 +17,8 @@ jobs:
       - run: |
           npm config set "registry" "https://registry.npmjs.org/"
           npm config set "//registry.npmjs.org/:_authToken" "${{secrets.NPM_AUTH_TOKEN}}"
-          npm config set "//registry/npmjs.org/:teensy"
           npm config set "//registry.npmjs.org/:always-auth" "true"
           npm config set "@teensy:registry" "https://registry.npmjs.org/"
-          npm config set "scope" "@teensy"
       - uses: pnpm/action-setup@v2
         name: Install pnpm
         id: pnpm-install
