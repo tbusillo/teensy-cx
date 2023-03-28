@@ -37,7 +37,8 @@ jobs:
 
       - name: Publish to NPM
         depends-on: test
-      - run: |
+        shell: bash
+        run: |
           npm config set "//registry.npmjs.org/:_authToken" "${{secrets.NPM_AUTH_TOKEN}}"
           npm config set "@teensy:registry" "https://registry.npmjs.org/"
           node -e "
