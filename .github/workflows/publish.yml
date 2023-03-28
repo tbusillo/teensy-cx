@@ -36,7 +36,6 @@ jobs:
         run: pnpm test
 
       - name: Publish to NPM
-        depends-on: test
         shell: bash
         run: |
           npm config set "//registry.npmjs.org/:_authToken" "${{secrets.NPM_AUTH_TOKEN}}"
