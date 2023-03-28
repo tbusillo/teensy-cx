@@ -39,7 +39,11 @@ const cx = (...classes: AllowedArgs[]): string | undefined => {
       }
 
       if (Array.isArray(element) && element.length) {
-        cx(...element)
+        const outside: any = cx.apply(null, element)
+        if (outside) {
+          r.push(outside)
+        }
+        return
       }
 
       if (type === 'object') {
