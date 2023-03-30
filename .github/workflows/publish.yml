@@ -46,7 +46,7 @@ jobs:
             .execSync('git rev-parse --short=8 HEAD')
             .toString()
             .trim()
-          pkg.version = pkg.version + '-next' + rev
+          pkg.version = pkg.version + '-next.' + rev
           require('fs').writeFileSync('./package.json', JSON.stringify(pkg, null, 2))
           "
       - run: npm publish --access=public --tag=next
