@@ -43,7 +43,7 @@ jobs:
           npm config set "@teensy:registry" "https://registry.npmjs.org/"
           node -e "
             const pkg = require('./package.json');
-            pkg.version = pkg.version + '-next.' + ${{ env.REV_SHORT }};
+            pkg.version = pkg.version + `-next.${ env.REV_SHORT }`;
             require('fs').writeFileSync('./package.json', JSON.stringify(pkg, null, 2));
           "
       - run: npm publish --access=public --tag=next
