@@ -21,3 +21,12 @@ export default defineBuildConfig({
   declaration: true,
   failOnWarn: false
 })
+
+const pkg = require('./package.json')
+const rev = require('child_process')
+  .execSync('git rev-parse --short=8 HEAD')
+  .toString()
+  .trim()
+pkg.version = pkg.version + '-next' + rev
+
+require('fs').writeFileSync('./package.json', JSON.stringify(pkg, null, 2))
