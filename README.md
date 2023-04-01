@@ -18,13 +18,13 @@
 ## Installation
 
 ```bash
-pnpm add @tbusillo/teensy-cx
+pnpm add @teensy/cx -D
 ```
 
 ## Usage
 
 ```js
-import cx from '@tbusillo/teensy-cx'
+import cx from '@teensy/cx'
 
 type CompProps = {
   children: React.ReactNode;

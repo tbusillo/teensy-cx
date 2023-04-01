@@ -10,12 +10,22 @@ export default defineBuildConfig({
       builder: 'mkdist',
       input: './src',
       outDir: './dist',
-      format: 'esm'
+      format: 'esm',
+      ext: 'mjs'
+    },
+    './src/index',
+    {
+      builder: 'mkdist',
+      input: './src',
+      outDir: './dist',
+      format: 'cjs',
+      ext: 'cjs'
     }
   ],
 
   // Change outDir, default is 'dist'
   outDir: './dist',
+  clean: true,
 
   // Generates .d.ts declaration file
   declaration: true,
