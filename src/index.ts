@@ -8,7 +8,6 @@ export type CxResult = string[]
 
 const invalidPrototypes = new Set([
   null,
-  undefined,
   NaN,
   Infinity,
   -0,
@@ -23,10 +22,10 @@ const cx = (...classes: AllowedArgs[]): string | undefined => {
   const r: CxResult = []
   const emptyString = ''
 
-  if (!Array.isArray(classes) || !classes.length) {
+  if (!Array.isArray(classes) || !classes.length || undefined) {
     return emptyString
   }
-  console.log(classes)
+
   classes
     .filter(e => !invalidPrototypes.has(typeof e as any))
     .map(element => {
