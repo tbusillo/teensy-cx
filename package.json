@@ -1,7 +1,7 @@
 {
   "name": "@teensy/cx",
   "author": "Tom Busillo",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "packageManager": "pnpm@8.1.0",
   "description": "A teensy-tiny Node.js TypeScript package template.",
   "type": "module",
@@ -46,6 +46,7 @@
     "lint": "eslint --ext .ts --fix",
     "pre:ci:test": "pnpm install -r --store=node_modules/.pnpm-store --no-frozen-lockfile",
     "clean": "rm -rf dist",
+    "prerelease": "pnpm build",
     "release": "standard-version",
     "format": "prettier --write '**/*.{ts,js,json,md}'",
     "lint-staged": "pnpm lint && pnpm format",
