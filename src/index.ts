@@ -18,7 +18,7 @@ const invalidPrototypes = new Set([
   ``
 ])
 
-const cx = (...classes: AllowedArgs[]): string | undefined => {
+const cx = (...classes: AllowedArgs[]): string => {
   const r: CxResult = []
   const emptyString = ''
 

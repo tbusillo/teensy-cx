@@ -2,7 +2,7 @@
   "name": "@teensy/cx",
   "author": "Tom Busillo",
   "version": "0.0.6",
-  "packageManager": "pnpm@7.13.2",
+  "packageManager": "pnpm@8.1.0",
   "description": "A teensy-tiny Node.js TypeScript package template.",
   "type": "module",
   "license": "MIT",

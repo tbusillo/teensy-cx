@@ -56,4 +56,11 @@ describe('cx', () => {
 
     expect(classNames).toEqual('a b c d')
   })
+
+  it('should return an empty string when passed an undefined value', () => {
+    //@ts-expect-error
+    const classNames = cx(undefined, [undefined], { undefined: undefined })
+
+    expect(classNames).toEqual('')
+  })
 })
