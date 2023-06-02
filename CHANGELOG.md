@@ -2,12 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-### [0.0.9](https://github.com/tbusillo/teensy-cx/compare/v0.0.8...v0.0.9) (2023-06-02)
+### [0.0.10](https://github.com/tbusillo/teensy-cx/compare/v0.0.8...v0.0.10) (2023-06-02)
 
 
 ### Bug Fixes
 
-* allow for undefined values ([3690776](https://github.com/tbusillo/teensy-cx/commit/3690776828f1f46dd806daee161c9f936c01d59f))
+* allow for undefined values ([b73f868](https://github.com/tbusillo/teensy-cx/commit/b73f86821f088eca091758d5b964564304433f51))
+
+### [0.0.9](https://github.com/tbusillo/teensy-cx/compare/v0.0.8...v0.0.9) (2023-06-02)
+
+### Bug Fixes
+
+- allow for undefined values ([3690776](https://github.com/tbusillo/teensy-cx/commit/3690776828f1f46dd806daee161c9f936c01d59f))
 
 ### [0.0.8](https://github.com/tbusillo/teensy-cx/compare/v0.0.7...v0.0.8) (2023-04-02)
 
