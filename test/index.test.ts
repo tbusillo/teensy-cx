@@ -63,4 +63,10 @@ describe('cx', () => {
 
     expect(classNames).toEqual('')
   })
+
+  it('should allow for undefined values', () => {
+    const classNames = cx(undefined, 'a', undefined, 'b')
+
+    expect(classNames).toEqual('a b')
+  })
 })

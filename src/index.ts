@@ -2,6 +2,7 @@ export type AllowedArgs =
   | string
   | string[]
   | number
+  | undefined
   | { [key: string]: boolean | number | string | undefined | null }
 
 export type CxResult = string[]
