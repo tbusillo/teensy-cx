@@ -35,6 +35,9 @@ jobs:
       - name: test
         run: pnpm test
 
+      - name: build
+        run: pnpm build
+
       - name: Publish to NPM
         shell: bash
         run: |
