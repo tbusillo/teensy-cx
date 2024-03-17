@@ -69,4 +69,16 @@ describe('cx', () => {
 
     expect(classNames).toEqual('a b')
   })
+
+  it('should handle falsy values', () => {
+    const classNames = cx('', false, null, undefined)
+
+    expect(classNames).toEqual('')
+  })
+
+  it('should handle a combination of truthy and falsy values', () => {
+    const classNames = cx('a', false, null, undefined, 'b')
+
+    expect(classNames).toEqual('a b')
+  })
 })

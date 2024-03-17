@@ -3,17 +3,18 @@ export type AllowedArgs =
   | string[]
   | number
   | undefined
+  | boolean
+  | null
   | { [key: string]: boolean | number | string | undefined | null }
 
 export type CxResult = string[]
 
 const invalidPrototypes = new Set([
-  null,
   NaN,
   Infinity,
   -0,
   0,
-  false,
+  // false,
   '',
   '',
   ``
@@ -53,6 +54,7 @@ const cx = (...classes: AllowedArgs[]): string => {
           }
         })
       }
+
       return
     })
   if (!r || r.length === 0) {
