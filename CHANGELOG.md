@@ -4,10 +4,9 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### [0.0.11](https://github.com/tbusillo/teensy-cx/compare/v0.0.10...v0.0.11) (2024-03-17)
 
-
 ### Bug Fixes
 
-* adds support for operands that reutrn booleans if false ([40663bf](https://github.com/tbusillo/teensy-cx/commit/40663bf2cf6b742b677e2a95f42f35af7965a35d))
+- adds support for operands that reutrn booleans if false ([40663bf](https://github.com/tbusillo/teensy-cx/commit/40663bf2cf6b742b677e2a95f42f35af7965a35d))
 
 ### [0.0.10](https://github.com/tbusillo/teensy-cx/compare/v0.0.8...v0.0.10) (2023-06-02)
 
