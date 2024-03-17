@@ -4,10 +4,9 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### [0.0.10](https://github.com/tbusillo/teensy-cx/compare/v0.0.8...v0.0.10) (2023-06-02)
 
-
 ### Bug Fixes
 
-* allow for undefined values ([b73f868](https://github.com/tbusillo/teensy-cx/commit/b73f86821f088eca091758d5b964564304433f51))
+- allow for undefined values ([b73f868](https://github.com/tbusillo/teensy-cx/commit/b73f86821f088eca091758d5b964564304433f51))
 
 ### [0.0.9](https://github.com/tbusillo/teensy-cx/compare/v0.0.8...v0.0.9) (2023-06-02)
 

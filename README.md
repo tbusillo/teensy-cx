@@ -41,4 +41,4 @@ Assuming `hasProp` and `ariaInvalid` evaluate to `truthy` values, the result wou
 
 MIT License
 
-Copyright (c) 2022 Tom
+Copyright (c) 2024 Tom
